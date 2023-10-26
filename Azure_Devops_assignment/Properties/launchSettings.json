@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Azure_Devops_assignment": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7187",
+      "launchBrowser": false
+    }
+  }
+}

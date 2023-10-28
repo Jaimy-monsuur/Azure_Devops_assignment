@@ -25,7 +25,7 @@ namespace Azure_Devops_assignment.Triggers
         {
             try 
             {
-                _logger.LogInformation($"C# Queue trigger function processed: {message.MessageText}");
+                _logger.LogInformation($"C# Queue trigger function processed a job request");
 
                 // Deserialize the message into a JobRequest instance
                 JobRequest? jobRequest = JsonSerializer.Deserialize<JobRequest>(message.MessageText);

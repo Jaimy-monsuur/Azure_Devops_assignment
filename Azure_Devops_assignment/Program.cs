@@ -1,3 +1,4 @@
+using Azure_Devops_assignment.Repository.Interface;
 using Azure_Devops_assignment.Service;
 using Azure_Devops_assignment.Service.Interface;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +10,8 @@ var host = new HostBuilder()
     {
         configureServices.AddTransient<IWeatherDataService, WeatherDataService>();
         configureServices.AddTransient<IImageService, ImageService>();
-
+        configureServices.AddTransient<IAzureBlobService, AzureBlobService>();
+        configureServices.AddTransient<IAzureBlobRepository, AzureBlobRepository>();
     })
     .Build();
 

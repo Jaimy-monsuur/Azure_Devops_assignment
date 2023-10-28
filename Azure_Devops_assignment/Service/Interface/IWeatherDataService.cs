@@ -9,8 +9,6 @@ namespace Azure_Devops_assignment.Service.Interface
 {
     public interface IWeatherDataService
     {
-        public Task<List<StationMeasurement>> GetWeatherDataFromApiAsync();
         public List<WeatherDataJob> GetWeatherDataJobs(string jobid, string timestamp);
-        public Task<byte[]> GetImageAsByteArrayAsync();
     }
 }

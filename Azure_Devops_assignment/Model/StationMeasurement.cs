@@ -28,6 +28,5 @@ namespace Azure_Devops_assignment.Model
         public double rainFallLast24Hour { get; set; }
         public double rainFallLastHour { get; set; }
         public double winddirectiondegrees { get; set; }
-
     }
 }

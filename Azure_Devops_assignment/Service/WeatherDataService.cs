@@ -1,7 +1,9 @@
 ﻿using Azure_Devops_assignment.Model;
 using Azure_Devops_assignment.Service.Interface;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Text;
 using System.Text.Json;
 
 namespace Azure_Devops_assignment.Service
@@ -13,10 +15,9 @@ namespace Azure_Devops_assignment.Service
 
         public WeatherDataService(ILoggerFactory loggerFactory)
         {
-            _ApiUrl = Environment.GetEnvironmentVariable("ImageApi");
+            _ApiUrl = Environment.GetEnvironmentVariable("BuienraderAPI");
             _logger = loggerFactory.CreateLogger<WeatherDataService>();
         }
-
 
         public List<WeatherDataJob> GetWeatherDataJobs(string jobid, string timestamp)
         {
@@ -31,7 +32,7 @@ namespace Azure_Devops_assignment.Service
                     WeatherDataJob weatherDataJob = new WeatherDataJob(jobid, timestamp, stationMeasurement);
                     weatherDataJobs.Add(weatherDataJob);
                 }
-
+                _logger.LogInformation("Succesfuly gor data from api");
                 return weatherDataJobs;
             }
             catch (Exception ex)
@@ -41,7 +42,7 @@ namespace Azure_Devops_assignment.Service
             }
         }
 
-        public async Task<List<StationMeasurement>> GetWeatherDataFromApiAsync()
+        private async Task<List<StationMeasurement>> GetWeatherDataFromApiAsync()
         {
             using (HttpClient httpClient = new HttpClient())
             {
@@ -51,14 +52,17 @@ namespace Azure_Devops_assignment.Service
                     response.EnsureSuccessStatusCode();
 
                     string jsonData = await response.Content.ReadAsStringAsync();
-                    JObject jsonObject = JObject.Parse(jsonData);
-                    JToken? stationMeasurementsToken = jsonObject["actual"]["stationmeasurements"];
-                    List<StationMeasurement> stationMeasurements = stationMeasurementsToken.ToObject<List<StationMeasurement>>();
 
-                    if (stationMeasurements != null && stationMeasurements.Count == 0)
+                    JObject jsonObject = JObject.Parse(jsonData);
+
+                    if (jsonObject["actual"]["stationmeasurements"] == null)
                     {
                         throw new Exception("Failed to get data from Api");
                     }
+
+                    JToken? stationMeasurementsToken = jsonObject["actual"]["stationmeasurements"];
+
+                    List<StationMeasurement> stationMeasurements = stationMeasurementsToken.ToObject<List<StationMeasurement>>();
 
                     return stationMeasurements;
                 }

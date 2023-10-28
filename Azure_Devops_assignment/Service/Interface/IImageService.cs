@@ -10,7 +10,5 @@ namespace Azure_Devops_assignment.Service.Interface
     public interface IImageService
     {
         public Task<byte[]> GetImageForStationMeasurementAsync(StationMeasurement stationMeasurement);
-        public byte[] WriteStationMeasurementsOnImage(byte[] array, StationMeasurement stationMeasurement);
-
     }
 }

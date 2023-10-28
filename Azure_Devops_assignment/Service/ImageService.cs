@@ -18,7 +18,7 @@ namespace Azure_Devops_assignment.Service
 
         public ImageService(ILoggerFactory loggerFactory) 
         {
-            _ApiUrl = Environment.GetEnvironmentVariable("BuienraderAPI");
+            _ApiUrl = Environment.GetEnvironmentVariable("ImageApi");
             _logger = loggerFactory.CreateLogger<WeatherDataService>();
         }
 
@@ -29,7 +29,7 @@ namespace Azure_Devops_assignment.Service
             return imageWithData;
         }
 
-        public byte[] WriteStationMeasurementsOnImage(byte[] array, StationMeasurement stationMeasurement) 
+        private byte[] WriteStationMeasurementsOnImage(byte[] array, StationMeasurement stationMeasurement) 
         {
             try
             {
@@ -37,18 +37,19 @@ namespace Azure_Devops_assignment.Service
                 using MagickImage image = new MagickImage(stream);
 
                 image.Settings.FontWeight = FontWeight.Bold;
-                image.Settings.FontPointsize = 14;
+                image.Settings.FontPointsize = 17;
                 image.Settings.FillColor = MagickColors.White;
                 image.Settings.BorderColor = MagickColors.White;
 
-                DrawableText stationName = new DrawableText(50, 100, $"Station: {stationMeasurement.stationname}");
-                DrawableText temperature = new DrawableText(50, 130, $"Regio: {stationMeasurement.temperature}");
-                DrawableText feeltemperature = new DrawableText(50, 130, $"Feel temperature: {stationMeasurement.feeltemperature}");
-                DrawableText windDirection = new DrawableText(50, 160, $"WindDirection: {stationMeasurement.winddirection}");
-                DrawableText windSpeed = new DrawableText(50, 190, $"Windspeed: {stationMeasurement.windspeed}");
-                DrawableText humidity = new DrawableText(50, 190, $"Humidity: {stationMeasurement.humidity}");
+                DrawableText date = new DrawableText(40, 70, $"Date: {DateTime.Now.ToString("dd-MM-yyyy")}");
+                DrawableText stationName = new DrawableText(40, 100, $"Station: {stationMeasurement.stationname}");
+                DrawableText temperature = new DrawableText(40, 130, $"Regio: {stationMeasurement.temperature}");
+                DrawableText feeltemperature = new DrawableText(40, 160, $"Feel temperature: {stationMeasurement.feeltemperature}");
+                DrawableText windDirection = new DrawableText(40, 190, $"WindDirection: {stationMeasurement.winddirection}");
+                DrawableText windSpeed = new DrawableText(40, 220, $"Windspeed: {stationMeasurement.windspeed}");
+                DrawableText humidity = new DrawableText(40, 250, $"Humidity: {stationMeasurement.humidity}");
 
-
+                image.Draw(date);
                 image.Draw(stationName);
                 image.Draw(temperature);
                 image.Draw(feeltemperature);
@@ -65,7 +66,7 @@ namespace Azure_Devops_assignment.Service
             }
         }
 
-        public async Task<byte[]> GetImageAsByteArrayAsync()
+        private async Task<byte[]> GetImageAsByteArrayAsync()
         {
             using (var httpClient = new HttpClient())
             {

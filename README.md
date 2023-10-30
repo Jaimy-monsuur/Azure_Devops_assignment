@@ -68,4 +68,4 @@ The first 2 Could haves have been implemented.
 ```
 
 ## Image result
-![Meetstation_Houtribdijk](Images/Meetstation_Houtribdijk.png)
+![Meetstation_Schiphol](Images/Meetstation_Schiphol.png)

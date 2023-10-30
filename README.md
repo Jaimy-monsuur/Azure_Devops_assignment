@@ -1,6 +1,9 @@
 
 # Azure_Devops_assignment
 
+**Student:** Jaimy Monsuur
+**NR:** 668040
+
 ## Task Requirements
 Using azure functions create an http endpoint which will start a background job that will create multiple images each containing the weather data from a different weather station. ([actual > station measurements] lists 51 different stations so you will generate 51 different images). The initial http endpoint will return a unique id for (or link to) a different endpoint that either list that the jobs are still in progress or a list with links to all the generated images served from the blob storage.
 
@@ -35,6 +38,9 @@ The first 2 Could haves have been implemented.
 	- Image URI are returned with a SAS token
 	- API are hidden behind a access token (AuthorizationLevel.Function)
 		- URLToken: ?code=\<Token\>
+
+## Deployment
+The application is make in DOTNET 6 isolated. There is a deploy.ps1 that creates the environment using a bicep file. The code can then be pushed using visual studio code 2022.
 
 ## Azure deployed endpoints
 - https://<Name>.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=\<Token\>

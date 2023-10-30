@@ -38,7 +38,7 @@ The first 2 Could haves have been implemented.
 
 ## Azure deployed endpoints
 - https://<Name>.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=\<Token\>
-- https://<Name>.azurewebsites.net/api/GetWeatherData/\<JobRequestId\>?code=\<Token\>
+- https://<Name>.azurewebsites.net/api/GetWeatherData_HttpTrigger/\<JobRequestId\>?code=\<Token\>
 
 ## Example Json response
 #### RequestWeatherData_HttpTrigger:

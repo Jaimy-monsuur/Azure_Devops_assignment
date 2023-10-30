@@ -47,7 +47,7 @@ The first 2 Could haves have been implemented.
 	"JobRequestId": "088d2659-dec5-45fb-8c8c-e3e2f6392a98-20231028225522",
 	"Timestamp": "28/10/2023 22:55:22",
 	"BaseUrl": "http://localhost:7187/api/GetWeatherData_HttpTrigger/",
-	"JobRequestUrl": "http://localhost:7187/api/GetWeatherData_HttpTrigger/088d2659-dec5-45fb-8c8c-		e3e2f6392a98-20231028225522"
+	"JobRequestUrl": "http://localhost:7187/api/GetWeatherData_HttpTrigger/088d2659-dec5-45fb-8c8c-e3e2f6392a98-20231028225522"
 }
 ```
 #### GetWeatherData_HttpTrigger:

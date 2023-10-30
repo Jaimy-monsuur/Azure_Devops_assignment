@@ -110,10 +110,6 @@ resource funcApp 'Microsoft.Web/sites@2021-02-01' = {
           value: storage.name
         }
         {
-          name: 'ContentContainer'
-          value: 'your-container-name' // Specify your container name here
-        }
-        {
           name: 'BlobConnectionString'
           value: storageConnectionString
         }

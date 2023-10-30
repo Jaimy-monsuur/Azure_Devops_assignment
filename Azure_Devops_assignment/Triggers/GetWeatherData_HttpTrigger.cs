@@ -21,7 +21,7 @@ namespace Azure_Devops_assignment.Triggers
 
         [Function("GetWeatherData_HttpTrigger")]
         public async Task<HttpResponseData> RunAsync(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetWeatherData/{jobId}")] HttpRequestData req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetWeatherData_HttpTrigger/{jobId}")] HttpRequestData req,
             string jobId)
         {
             try

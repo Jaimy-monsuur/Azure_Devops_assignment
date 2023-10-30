@@ -123,7 +123,7 @@ resource funcApp 'Microsoft.Web/sites@2021-02-01' = {
         }
         {
           name: 'GetWeatherDataBaseUrl'
-          value: 'https://${functionAppName}.azurewebsites.net/api/GetWeatherData/'
+          value: 'https://${functionAppName}.azurewebsites.net/api/GetWeatherData_HttpTrigger/'
         }
       ]
     }

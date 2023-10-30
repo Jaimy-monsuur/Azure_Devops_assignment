@@ -34,11 +34,11 @@ All must haves have been implemented.
 The first 2 Could haves have been implemented.
 	- Image URI are returned with a SAS token
 	- API are hidden behind a access token (AuthorizationLevel.Function)
-		- URLToken: ?code=<Token>
+		- URLToken: ?code=&ltToken&gt
 
 ## Azure deployed endpoints
-- https://<Name>.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=<Token>
-- https://<Name>.azurewebsites.net/api/GetWeatherData/<JobRequestId>?code=<Token>
+- https://<Name>.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=&ltToken&gt
+- https://<Name>.azurewebsites.net/api/GetWeatherData/&ltJobRequestId&gt?code=&ltToken&gt
 
 ## Example Json response
 #### RequestWeatherData_HttpTrigger:
@@ -67,5 +67,5 @@ The first 2 Could haves have been implemented.
 }
 ```
 
-##Image result
+## Image result
 ![Meetstation_Houtribdijk](Images/Meetstation_Houtribdijk.png)

@@ -37,16 +37,16 @@ All must haves have been implemented.
 The all Could haves have been implemented.
 	- Image URI are returned with a SAS token
 	- API are hidden behind a access token (AuthorizationLevel.Function)
-		- URLToken: ?code=\<Token\>
+		- URLToken: ?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ==
 	- Provide a status endpoint for fetching progress status and saving status in Table.
 
 ## Deployment
 The application is make in DOTNET 6 isolated. There is a deploy.ps1 that creates the environment using a bicep file. The code can then be pushed using visual studio code 2022.
 
 ## Azure deployed endpoints
-- https://<Name>.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=\<Token\>
-- https://<Name>.azurewebsites.net/api/GetWeatherData_HttpTrigger/\<JobRequestId\>?code=\<Token\>
-- https://<Name>.azurewebsites.net/api/CheckRequestStatus_HttpTrigger/\<JobRequestId\>?code=\<Token\>
+- https://jminh-funcapp-5tmxwx3.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ==
+- https://jminh-funcapp-5tmxwx3.azurewebsites.net/api/GetWeatherData_HttpTrigger/\<JobRequestId\>?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ==
+- https://jminh-funcapp-5tmxwx3.azurewebsites.net/api/CheckRequestStatus_HttpTrigger/\<Token\>?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ==
 
 
 ## Example Json response

@@ -30,7 +30,7 @@ Using azure functions create an http endpoint which will start a background job 
 
 ## Design
 
-![Azure Devops assignment Design](Images/Azure_Devops_assignment-v2.png)
+![Azure Devops assignment Design](Images/Azure_Devops_assignment-v3.png)
 
 ## Requirements checklist
 All must haves have been implemented.

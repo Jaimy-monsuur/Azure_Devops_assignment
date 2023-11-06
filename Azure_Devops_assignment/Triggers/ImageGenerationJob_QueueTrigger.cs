@@ -13,12 +13,14 @@ namespace Azure_Devops_assignment.Triggers
         private readonly ILogger _logger;
         private readonly IImageService _imageService;
         private readonly IAzureBlobService _azureBlobService;
+        private readonly IJobStatusService _jobStatusService;
 
-        public ImageGenerationJob_QueueTrigger(ILoggerFactory loggerFactory, IImageService imageService, IAzureBlobService azureBlobService)
+        public ImageGenerationJob_QueueTrigger(ILoggerFactory loggerFactory, IImageService imageService, IAzureBlobService azureBlobService, IJobStatusService jobStatusService)
         {
             _logger = loggerFactory.CreateLogger<ImageGenerationJob_QueueTrigger>();
             _imageService = imageService;
             _azureBlobService = azureBlobService;
+            _jobStatusService = jobStatusService;
         }
 
         [Function(nameof(ImageGenerationJob_QueueTrigger))]
@@ -37,6 +39,14 @@ namespace Azure_Devops_assignment.Triggers
                 byte[] image = _imageService.GetImageForStationMeasurementAsync(data.Measurement).Result;
                 await _azureBlobService.SetBlobContainerClientOrCreateAsync(data.JobId);
                 await _azureBlobService.UploadBlobAsync(image, data.Measurement.stationname.Replace(" ", "_") + ".png");
+
+                if (data.IsLastItem == true)
+                {
+                    _logger.LogInformation("Updating job status for: " + data.JobId);
+                    JobStatusEntity jobStatusEntity = await _jobStatusService.GetJobStatusAsync(data.Timestamp, data.JobId);
+                    jobStatusEntity.Status = Model.Enum.JobStatus.Completed.ToString();
+                    await _jobStatusService.UpdateJobStatusAsync(jobStatusEntity);
+                }
             }
             catch (Exception ex)
             {

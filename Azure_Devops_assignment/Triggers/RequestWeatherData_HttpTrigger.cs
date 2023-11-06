@@ -11,15 +11,17 @@ namespace Azure_Devops_assignment.Triggers
     {
         private readonly ILogger _logger;
         private readonly string? _url;
+        private readonly IJobStatusService _jobStatusService;
 
-        public RequestWeatherData_HttpTrigger(ILoggerFactory loggerFactory)
+        public RequestWeatherData_HttpTrigger(ILoggerFactory loggerFactory, IJobStatusService jobStatusService)
         {
             _logger = loggerFactory.CreateLogger<RequestWeatherData_HttpTrigger>();
             _url = Environment.GetEnvironmentVariable("GetWeatherDataBaseUrl");
+            _jobStatusService = jobStatusService;
         }
 
         [Function("RequestWeatherData_HttpTrigger")]
-        public QueueAndHttpResponseDataOutput Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req)
+        public async Task<QueueAndHttpResponseDataOutput> RunAsync([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a Http request to generate a job request.");
             string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -28,10 +30,13 @@ namespace Azure_Devops_assignment.Triggers
             JobRequest job = new JobRequest
             {
                 JobRequestId = stringID,
-                Timestamp = DateTime.Now.ToString(),
+                Timestamp = timestamp,
                 BaseUrl = _url,
                 JobRequestUrl = _url + stringID,
             };
+
+            JobStatusEntity jobStatusEntity = new JobStatusEntity(stringID, timestamp, Model.Enum.JobStatus.Pending);
+            await _jobStatusService.InsertJobStatusAsync(jobStatusEntity);
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");

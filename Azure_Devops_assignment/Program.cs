@@ -1,3 +1,4 @@
+using Azure_Devops_assignment.Model;
 using Azure_Devops_assignment.Repository.Interface;
 using Azure_Devops_assignment.Service;
 using Azure_Devops_assignment.Service.Interface;
@@ -12,7 +13,14 @@ var host = new HostBuilder()
         configureServices.AddTransient<IImageService, ImageService>();
         configureServices.AddTransient<IAzureBlobService, AzureBlobService>();
         configureServices.AddTransient<IAzureBlobRepository, AzureBlobRepository>();
+        configureServices.AddTransient<IJobStatusService, JobStatusService>();
+        configureServices.AddSingleton<ITableStorageRepository<JobStatusEntity>, TableStorageRepository<JobStatusEntity>>(provider => 
+        {
+            string tableName = "JobRequestTable";
+            return new TableStorageRepository<JobStatusEntity>(tableName);
+        });
     })
     .Build();
 
 host.Run();
+

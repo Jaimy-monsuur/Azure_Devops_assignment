@@ -12,11 +12,13 @@ namespace Azure_Devops_assignment.Triggers
     {
         private readonly ILogger _logger;
         private readonly IAzureBlobService _azureBlobService;
+        private readonly IJobStatusService _jobStatusService;
 
-        public GetWeatherData_HttpTrigger(ILoggerFactory loggerFactory, IAzureBlobService azureBlobService)
+        public GetWeatherData_HttpTrigger(ILoggerFactory loggerFactory, IAzureBlobService azureBlobService, IJobStatusService jobStatusService)
         {
             _logger = loggerFactory.CreateLogger<GetWeatherData_HttpTrigger>();
             _azureBlobService = azureBlobService;
+            _jobStatusService = jobStatusService;
         }
 
         [Function("GetWeatherData_HttpTrigger")]
@@ -27,24 +29,37 @@ namespace Azure_Devops_assignment.Triggers
             try
             {
                 _logger.LogInformation($"C# HTTP trigger function processed a get weather data request for JobId: {jobId}");
+                List<string> parts = jobId.Split('-').ToList();
+                _logger.LogInformation("Getting status for id" + jobId + "Timestamp: " + parts.Last());
+                JobStatusEntity jobStatus = await _jobStatusService.GetJobStatusAsync(parts.Last(), jobId);
+                if (jobStatus == null)
+                {
+                    throw new Exception("Job status is not present for id: " + jobId);
+                }
+                if (jobStatus.Status != Model.Enum.JobStatus.Completed.ToString())
+                {
+                    return CreateResponse(req, HttpStatusCode.OK, "Request is still being processed, Status: " + jobStatus.Status);
+                }
+
                 await _azureBlobService.SetBlobContainerClientAsync(jobId);
                 Uri uri = _azureBlobService.GetBlobContainerUrlWithSasToken();
                 List<string> fileNames = await _azureBlobService.GetBlobNamesAsync();
 
                 BlobContainerSASTokenResponce blobContainerSASTokenResponce = new BlobContainerSASTokenResponce(uri.ToString(), fileNames);
-
-                var response = req.CreateResponse(HttpStatusCode.OK);
-                response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-                response.WriteString(JsonSerializer.Serialize(blobContainerSASTokenResponce));
-                return response;
+                return CreateResponse(req, HttpStatusCode.OK, JsonSerializer.Serialize(blobContainerSASTokenResponce));
             }
             catch (Exception)
             {
-                var response = req.CreateResponse(HttpStatusCode.InternalServerError);
-                response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-                response.WriteString("Sometin`g went wrong or the token was not valid");
-                return response;
+                return CreateResponse(req, HttpStatusCode.InternalServerError, "Something went wrong or the token was not valid");
             }
+        }
+
+        private HttpResponseData CreateResponse(HttpRequestData req, HttpStatusCode statusCode, string content)
+        {
+            var response = req.CreateResponse(statusCode);
+            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+            response.WriteString(content);
+            return response;
         }
     }
 }

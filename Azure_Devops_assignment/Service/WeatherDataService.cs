@@ -27,12 +27,14 @@ namespace Azure_Devops_assignment.Service
 
                 List<WeatherDataJob> weatherDataJobs = new List<WeatherDataJob>();
 
-                foreach (var stationMeasurement in stationMeasurements)
+                for (int i = 0; i < stationMeasurements.Count; i++)
                 {
-                    WeatherDataJob weatherDataJob = new WeatherDataJob(jobid, timestamp, stationMeasurement);
+                    bool isLast = (i == stationMeasurements.Count - 1); // Check if it's the last item
+                    WeatherDataJob weatherDataJob = new WeatherDataJob(jobid, timestamp, stationMeasurements[i], isLast);
                     weatherDataJobs.Add(weatherDataJob);
                 }
-                _logger.LogInformation("Succesfuly gor data from api");
+
+                _logger.LogInformation("Successfully got data from API");
                 return weatherDataJobs;
             }
             catch (Exception ex)
@@ -41,6 +43,7 @@ namespace Azure_Devops_assignment.Service
                 throw;
             }
         }
+
 
         private async Task<List<StationMeasurement>> GetWeatherDataFromApiAsync()
         {

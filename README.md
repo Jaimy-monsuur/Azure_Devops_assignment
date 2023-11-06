@@ -31,14 +31,16 @@ Using azure functions create an http endpoint which will start a background job 
 
 ## Requirements checklist
 All must haves have been implemented.
-The first 2 Could haves have been implemented.
+The all Could haves have been implemented.
 	- Image URI are returned with a SAS token
 	- API are hidden behind a access token (AuthorizationLevel.Function)
 		- URLToken: ?code=\<Token\>
+	- Provide a status endpoint for fetching progress status and saving status in Table.
 
 ## Azure deployed endpoints
 - https://<Name>.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=\<Token\>
-- https://<Name>.azurewebsites.net/api/GetWeatherData/\<JobRequestId\>?code=\<Token\>
+- https://<Name>.azurewebsites.net/api/GetWeatherData_HttpTrigger/\<JobRequestId\>?code=\<Token\>
+- https://<Name>.azurewebsites.net/api/CheckRequestStatus_HttpTrigger/\<JobRequestId\>?code=\<Token\>
 
 ## Example Json response
 #### RequestWeatherData_HttpTrigger:

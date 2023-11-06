@@ -11,12 +11,14 @@ namespace Azure_Devops_assignment.Model
         public string? JobId { get; set; }
         public string Timestamp { get; set; }
         public StationMeasurement Measurement { get; set; }
+        public bool IsLastItem {  get; set; }
 
-        public WeatherDataJob(string jobData, string timestamp, StationMeasurement measurement)
+        public WeatherDataJob(string jobData, string timestamp, StationMeasurement measurement, bool isLastItem)
         {
             this.JobId = jobData;
             this.Timestamp = timestamp;
             this.Measurement = measurement;
+            this.IsLastItem = isLastItem;
         }
     }
 }

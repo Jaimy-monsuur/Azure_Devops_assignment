@@ -30,7 +30,7 @@ Using azure functions create an http endpoint which will start a background job 
 
 ## Design
 
-![Azure Devops assignment Design](Images/Azure_Devops_assignment.png)
+![Azure Devops assignment Design](Images/Azure_Devops_assignment-v2.png)
 
 ## Requirements checklist
 All must haves have been implemented.
@@ -46,10 +46,8 @@ The application is make in DOTNET 6 isolated. There is a deploy.ps1 that creates
 ## Azure deployed endpoints
 - https://<Name>.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=\<Token\>
 - https://<Name>.azurewebsites.net/api/GetWeatherData_HttpTrigger/\<JobRequestId\>?code=\<Token\>
-<<<<<<< HEAD
 - https://<Name>.azurewebsites.net/api/CheckRequestStatus_HttpTrigger/\<JobRequestId\>?code=\<Token\>
-=======
->>>>>>> da6bb8707e09b98fd164dc55a5da3ff44f67982d
+
 
 ## Example Json response
 #### RequestWeatherData_HttpTrigger:

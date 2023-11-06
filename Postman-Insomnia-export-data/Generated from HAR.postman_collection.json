@@ -1,0 +1,469 @@
+{
+	"info": {
+		"_postman_id": "88c69909-c21d-4d22-a74d-748c9a6e23a3",
+		"name": "Generated from HAR",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20521518"
+	},
+	"item": [
+		{
+			"name": "localhost:7187/api/CheckRequestStatus_HttpTrigger/7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/2023.5.8"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/CheckRequestStatus_HttpTrigger/7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"CheckRequestStatus_HttpTrigger",
+						"7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/CheckRequestStatus_HttpTrigger/7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"CheckRequestStatus_HttpTrigger",
+								"7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 15:56:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "text/plain; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:7187/api/GetWeatherData_HttpTrigger/7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/2023.5.8"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/GetWeatherData_HttpTrigger/7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"GetWeatherData_HttpTrigger",
+						"7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/GetWeatherData_HttpTrigger/7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"GetWeatherData_HttpTrigger",
+								"7e359f16-cb5e-4fd6-8e79-31bacdbdd39f-20231106165616"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 15:56:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "text/plain; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:7187/api/RequestWeatherData_HttpTrigger",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/2023.5.8"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/RequestWeatherData_HttpTrigger",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"RequestWeatherData_HttpTrigger"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/RequestWeatherData_HttpTrigger",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"RequestWeatherData_HttpTrigger"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 15:56:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "text/plain; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "jminh-funcapp-5tmxwx3.azurewebsites.net/api/CheckRequestStatus_HttpTrigger/6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ==",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/2023.5.8"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL2}}/api/CheckRequestStatus_HttpTrigger/6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D",
+					"host": [
+						"{{baseURL2}}"
+					],
+					"path": [
+						"api",
+						"CheckRequestStatus_HttpTrigger",
+						"6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL2}}/api/CheckRequestStatus_HttpTrigger/6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D",
+							"host": [
+								"{{baseURL2}}"
+							],
+							"path": [
+								"api",
+								"CheckRequestStatus_HttpTrigger",
+								"6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 17:04:45 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "text/plain; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "jminh-funcapp-5tmxwx3.azurewebsites.net/api/GetWeatherData_HttpTrigger/6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ==",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/2023.5.8"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL2}}/api/GetWeatherData_HttpTrigger/6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D",
+					"host": [
+						"{{baseURL2}}"
+					],
+					"path": [
+						"api",
+						"GetWeatherData_HttpTrigger",
+						"6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL2}}/api/GetWeatherData_HttpTrigger/6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D",
+							"host": [
+								"{{baseURL2}}"
+							],
+							"path": [
+								"api",
+								"GetWeatherData_HttpTrigger",
+								"6ce9e652-b5e4-4f8f-8c73-65dcaf5629d2-20231106163850"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 16:40:15 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "text/plain; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "jminh-funcapp-5tmxwx3.azurewebsites.net/api/RequestWeatherData_HttpTrigger?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ==",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/2023.5.8"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL2}}/api/RequestWeatherData_HttpTrigger?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D",
+					"host": [
+						"{{baseURL2}}"
+					],
+					"path": [
+						"api",
+						"RequestWeatherData_HttpTrigger"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL2}}/api/RequestWeatherData_HttpTrigger?code=5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D",
+							"host": [
+								"{{baseURL2}}"
+							],
+							"path": [
+								"api",
+								"RequestWeatherData_HttpTrigger"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "5j0_V-XFysGGjR0B1wC-XKeUaSfskj3iM8-IyzC4yYkIAzFunqqWcQ%3D%3D"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 16:38:50 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "text/plain; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL1",
+			"value": "http://localhost:7187",
+			"type": "any"
+		},
+		{
+			"key": "baseURL2",
+			"value": "https://jminh-funcapp-5tmxwx3.azurewebsites.net",
+			"type": "any"
+		}
+	]
+}

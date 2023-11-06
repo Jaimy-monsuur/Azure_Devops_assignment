@@ -29,8 +29,8 @@ namespace Azure_Devops_assignment.Model
             {
                 return status;
             }
-            // Handle the case where the string couldn't be parsed to an enum.
-            return JobStatus.Unknown; // You can choose an appropriate default value.
+            
+            return JobStatus.Unknown; 
         }
     }
 }
